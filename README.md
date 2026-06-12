@@ -38,3 +38,60 @@ A continuación se muestra una comparación entre la imagen original y la proces
 | Imagen Original  | Flor Segmentada (Fondo Negro) |
 | :---: | :---: |
 | ![Original](img/procesada.jpg) | ![Procesada](img/original.jpg) |
+
+---
+
+## Estructura del repositorio
+
+* `codigo_procesamiento.ipynb`:Codigo en python donde se encuentra el procesamiento completo para aplicar a todo el dataset
+* `proyecto_final_imágenes_rgb.ipynb`:Codigo que contiene la arquitectura e instrucciones de entrenamiento de la CNN, modificado únicamente con la ruta del dataset procesado.
+* `img/`: Carpeta donde se muestran imagenes que utilizadas en este README.md
+* `README.md`: Este archivo explicativo de la metodología y resultados.
+
+---
+
+## Instrucciones de Ejecución
+
+### 1. Entorno de ejecución
+Ambos codigos, tanto el `codigo_procesamiento.ipynb` como `proyecto_final_imágenes_rgb.ipynb` estan pensados para ser utilizados en la plataforma **COLAB** de google. Asi que se recomienda subir el codigo en la carpeta de drive como se muestra a continuacion y abrir el archivo con colab.
+
+* Si el usuario desea no mover nada del codigo debe tener la siguiente estructura de carpetas en su drive:
+```python
+ORIGINAL_DATASET_DIR = "/content/drive/MyDrive/sistemas_distribuidos_proyecto/flores"
+PROCESSED_DATASET_DIR = "/content/drive/MyDrive/sistemas_distribuidos_proyecto/flores_procesadas"
+```
+
+* O en su defecto, si no lo quieres hacer asi, solamente asegurate de tener montado la siguiente estructura de carpetas para tus variables:
+```python
+ORIGINAL_DATASET_DIR = "/ruta/a/flowers"
+ PROCESSED_DATASET_DIR = "/ruta/a/flores_procesadas"
+```
+
+* Al utilizar un entorno de notebooks de colab al abrir el archivo .ipynb el usuario debe **ejecutar todas las celdas de codigo**. El mismo codigo te avisara cuando se haya terminado de procesar todas las imagenes.
+
+### 2. Entrenamiento de la CNN
+
+Al terminar el procesamiento de las imagenes, en un notebook de colab, ejecutar todas las celdas de codigo de el archivo `proyecto_final_imágenes_rgb.ipynb`, que es donde se encuentra la cnn.
+Antes de ejecutar, asegurate que la ruta con las imagenes coincida con la ruta de la carpeta donde se guardaron las imagenes procesadas.
+
+*(Nota: Puedes cambiar el entorno de ejecucion de colab para usar GPU en lugar de CPU, lo cual reducira el tiempo de entrenamiento).*
+
+
+---
+
+## Resumen de Resultados
+
+| Métrica (Validation) | Modelo Original | Modelo Propuesto | Diferencia |
+| :--- | :---: | :---: | :---: |
+| **Accuracy** | **77%** | **77%** | **0%** |
+| **Precision (Macro Avg)** | **77%** | **77%** | **0%** |
+| **Recall (Macro Avg)** | **77%** | **78%** | **1%** |
+| **F1-Score (Macro Avg)** | **76%** | **77%** | **1%** |
+
+### Conclusiones Principales:
+
+* **Métricas globales** De forma general las metricas globales mejoraron ligeramente con el procesamiento realizado que con el entrenamiento de el dataset original. Aunque exista esta paridad en las metricas puede ser un poco engoñosa, pues al tener tan poca variacion una de otra, es probables que si se vuelva a realizar los entrenamientos de la CNN es posible que los papeles se inviertan.
+* **Mejora en la detección de Rosas (Rose):** Fue la clase más beneficiada por el pipeline. Su *Recall* aumentó un **10%** (pasando de 60% a 70%) y su *F1-Score* subió un **4%**. 
+* **Optimización de precisión en Tulipanes (Tulip) y Girasoles (Sunflower):** Los tulipanes aumentaron su precisión en un **7%** (de 71% a 78%) y los girasoles un **2%** (de 74% a 76%).
+* **El "Costo" de la pérdida de contexto:** En clases como la Margarita (*Daisy*) y el Diente de León (*Dandelion*), se observó una ligera disminución en precisión y *Recall* respectivamente. 
+* **Efectividad de la propuesta:** Aunque las metricas generales del modelo aumentaron ligeramente, no podemos concluir que el procesamiento planteado haya mejorado de forma significativa la deteccion de las diferentes clases de flores de manera global, ya que las metricas globales siguieron muy parejas entre ambos modelos y las metricas individuales en unos casos mejoraron y en otros empeoraron.
