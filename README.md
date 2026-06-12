@@ -25,4 +25,16 @@ El flujo del procesamiento aplicado a cada imagen consiste en lo siguiente:
 6. **Enmascaramiento Bitwise:** Aplicamos la máscara binaria final sobre la imagen BGR original, resultando en la flor a color sobre un fondo negro absoluto.
 7. **Redimensionamiento :** Ajustamos las imágenes procesadas al tamaño necesario para la CNN ($150 \times 150$ píxeles).
 
-En el diagrama 
+En el siguiente diagrama se muestra el flujo general de entrenamieto de la CNN con las imagenes procesadas ![General](img/dia1.jpg)
+
+En el Siguiente diagrama se muestra de forma mas clara el flujo del rpocesamiento de las imagens con el pipeline propuesto ![Proceso](img/dia2.jpg)
+
+--- 
+
+## Evidencia del procesamiento
+
+A continuación se muestra una comparación entre la imagen original y la procesada:
+
+| Imagen Original  | Flor Segmentada (Fondo Negro) |
+| :---: | :---: |
+| ![Original](img/procesada.jpg) | ![Procesada](img/original.jpg) |
