@@ -44,7 +44,7 @@ A continuación se muestra una comparación entre la imagen original y la proces
 ## Estructura del repositorio
 
 * `codigo_procesamiento.ipynb`:Codigo en python donde se encuentra el procesamiento completo para aplicar a todo el dataset
-* `proyecto_final_imágenes_rgb.ipynb`:Codigo que contiene la arquitectura e instrucciones de entrenamiento de la CNN, modificado únicamente con la ruta del dataset procesado.
+* `PROYECTO_FINAL_IMÁGENES_RGB.ipynb`:Codigo que contiene la arquitectura e instrucciones de entrenamiento de la CNN, modificado únicamente con la ruta del dataset procesado.
 * `img/`: Carpeta donde se muestran imagenes que utilizadas en este README.md
 * `README.md`: Este archivo explicativo de la metodología y resultados.
 
@@ -53,7 +53,7 @@ A continuación se muestra una comparación entre la imagen original y la proces
 ## Instrucciones de Ejecución
 
 ### 1. Entorno de ejecución
-Ambos codigos, tanto el `codigo_procesamiento.ipynb` como `proyecto_final_imágenes_rgb.ipynb` estan pensados para ser utilizados en la plataforma **COLAB** de google. Asi que se recomienda subir el codigo en la carpeta de drive como se muestra a continuacion y abrir el archivo con colab.
+Ambos codigos, tanto el `codigo_procesamiento.ipynb` como `PROYECTO_FINAL_IMÁGENES_RGB.ipynb` estan pensados para ser utilizados en la plataforma **COLAB** de google. Asi que se recomienda subir el codigo en la carpeta de drive como se muestra a continuacion y abrir el archivo con colab.
 
 * Si el usuario desea no mover nada del codigo debe tener la siguiente estructura de carpetas en su drive:
 ```python
